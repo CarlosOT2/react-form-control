@@ -19,6 +19,7 @@ Manage form state, input changes, submissions, debouncing and query parameters w
 
 - 🎛️ Simple form state management
 - ⌨️ Automatic input change handling
+- ☑️ Built-in checkbox support with multiple values
 - 📤 Form submission controller
 - ⏱️ Optional debounced submission with `submitOnChange`
 - 🔗 URL query parameter synchronization
@@ -172,6 +173,47 @@ Example:
 
 ---
 
+## ☑️ Checkbox Support
+
+React Form Control automatically handles checkbox values as arrays.
+
+Use the same `name` for checkboxes that belong to the same field:
+
+```tsx
+<input
+    type="checkbox"
+    name="genres"
+    value="action"
+    checked={InputsController.data.genres?.includes('action') ?? false}
+    onChange={InputsController.onChange}
+/>
+
+<input
+    type="checkbox"
+    name="genres"
+    value="comedy"
+    checked={InputsController.data.genres?.includes('comedy') ?? false}
+    onChange={InputsController.onChange}
+/>
+```
+
+When both options are selected, the form data will contain:
+
+```ts
+{
+    genres: ['action', 'comedy']
+}
+```
+
+Selecting an unchecked option adds its value to the array, while selecting an already checked option removes it.
+
+Checkbox values also work with **Query Control**, where repeated values are represented as repeated URL query parameters:
+
+```txt
+?genres=action&genres=comedy
+```
+
+---
 
 ## 📤 SubmitController
 
@@ -490,11 +532,8 @@ Returns:
 }
 ```
 
-
-
 ---
 
 ## 📄 License
 
 Distributed under the MIT License.
-
