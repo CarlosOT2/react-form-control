@@ -8,6 +8,7 @@ Manage form state, input changes, submissions, debouncing and query parameters w
 
 [![npm version](https://img.shields.io/npm/v/@carlosot2/react-form-control.svg)](https://www.npmjs.com/package/@carlosot2/react-form-control)
 [![npm downloads](https://img.shields.io/npm/dm/@carlosot2/react-form-control.svg)](https://www.npmjs.com/package/@carlosot2/react-form-control)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/CarlosOT2/react-form-control)
 [![license](https://img.shields.io/npm/l/@carlosot2/react-form-control.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-3178C6)](https://www.typescriptlang.org/)
 
